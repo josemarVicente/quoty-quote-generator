@@ -113,11 +113,8 @@ const newQuote = (data) => {
 //Category buttons functionality
 const checkBtn = () => {
     const checkedBtn = document.querySelector('input:checked');
-    if(checkedBtn.value = 'all'){
-        url = `https://api.api-ninjas.com/v1/quotes`;
-    } else {
+    if(checkedBtn.value){
         url = `https://api.api-ninjas.com/v1/quotes?category=${checkedBtn.value}`;
-        checkedBtn.checked = true;
     }
 }
 
