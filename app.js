@@ -73,16 +73,16 @@ const category = [
     {name: 'movies'},
     {name: 'success'}
 ];
+let url = "https://api.api-ninjas.com/v1/quotes";
 
 const fetchQuote = async () =>{
     const response = await
-    fetch(`https://api.api-ninjas.com/v1/quotes`, {
+    fetch(url, {
         headers: {
         "X-API-KEY": "PEhp/oPiEOr2f1gSj4pLxQ==fLKwpRyUj8chyMTf"
             }
         }
-    );
-
+);
     const data = await response.json();
     console.log(data);
     newQuote(data);
@@ -90,30 +90,55 @@ const fetchQuote = async () =>{
 
 window.addEventListener('load', fetchQuote);
 
-//populate the category container
 category.forEach((category) => {
     categoryContainer.innerHTML += `
         <label>
-            <input type="radio" onclick="handleCategoryCheck()" value="${category.name}" name="category" id="">
+            <input type="radio" value="${category.name}" onclick=checkBtn() name="category" id="">
             <span>${category.name}</span>
         </label>
     `;
 });
 
-//radio buttons functionality
-const handleCategoryCheck = () => {
-    const radioBtn = document.querySelector('input:checked');
-    console.log(radioBtn.value);
-}
-
 const newQuote = (data) => {
     quote.innerText = data[0].quote;
     author.innerText = `- ${data[0].author}`;
     if(quote){
-        twitter.querySelector('a').href = `https://twitter.com/intent/tweet?text=${data[0].quote}%20-%20${data[0].author}&via=%20-%20quoty`
+        twitter.querySelector('a').href = `https://twitter.com/intent/tweet?text=${data[0].quote}%0A%0A-%20${data[0].author}`
     } else {
         twitter.querySelector('a').href = `#`;
     }
 }
+
+
+//Category buttons functionality
+const checkBtn = () => {
+    const checkedBtn = document.querySelector('input:checked');
+    if(checkedBtn.value = 'all'){
+        url = `https://api.api-ninjas.com/v1/quotes`;
+    } else {
+        url = `https://api.api-ninjas.com/v1/quotes?category=${checkedBtn.value}`;
+        checkedBtn.checked = true;
+    }
+}
+
+// Store the currently checked radio button
+let lastChecked = null;
+
+// HANDLE CHECK AND UNCHECK ON RADIO BUTTONS
+const radioButtons = document.querySelectorAll('input[name="category"]');
+
+radioButtons.forEach(radio => {
+    radio.addEventListener('click', function() {
+        if (this === lastChecked) {
+            // If the same radio button is clicked again, uncheck it
+            this.checked = false;
+            lastChecked = null;
+        } else {
+            // Otherwise, update the last checked radio button
+            lastChecked = this;
+        }
+    });
+});
+
 //New Quote Button
 generateBtn.addEventListener('click', fetchQuote);

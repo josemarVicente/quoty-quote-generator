@@ -8,7 +8,6 @@
     --platinum: #cacece;
     --font-stardom: 'Stardom';
     --font-poppins: 'Poppins';
-    --gradient: linear-gradient(180deg, var(--primary-color) 0%, var(--platinum) 100%);
 }
 
 *{
@@ -19,8 +18,10 @@
 }
 
 body{
-    background: linear-gradient(353deg, var(--accent-color) 0%, var(--night-color) 30%);;
     height: 100vh;
+    background-image: linear-gradient(353deg, var(--accent-color) 0%, var(--night-color) 30%);
+    background-size: cover;
+    background-position: center top;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,7 +162,6 @@ main{
     padding: 10px 2px;
 }
 
-
 .category__container span{
     width: 50%;
     padding: 8px;
@@ -197,6 +197,12 @@ main{
     width: 4px;
   }
 
+footer{
+    color: var(--platinum);
+    font-size: 1.1rem;
+    padding-bottom: 1%;
+}
+
 @media screen and (max-width: 375px){
     .section__category{
         margin-top: 5px;
@@ -218,6 +224,17 @@ main{
     #author{
         font-size: .9rem;
     }
+    .category__container{
+        height: 200px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .category__container span{
+        font-size: .8rem;
+    }
+    .category__container label{
+        padding: 8px 0;
+    }
 
 }
 
@@ -234,8 +251,5 @@ main{
     .quote__info svg{
         width: 30px;
         height: 30px;
-    }
-    main{
-        flex-direction: column;
     }
 }
