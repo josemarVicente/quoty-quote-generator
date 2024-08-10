@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quoty - Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <nav>
+        <h1 class="logo">Quoty</h1>
+    </nav>
+
+    <section class="section__category">
+        <div class="header">
+            <h1>Random Quote Generator</h1>
+                <svg
+                viewBox="0 0 448 512" ~
+                xmlns="http://www.w3.org/2000/svg">
+                    <path
+                    d="M96 224c-11.28 0-21.95 2.3-32 5.9V224c0-35.3 28.7-64 64-64 17.67 0 32-14.33 32-32s-14.3-32-32-32C57.42 96 0 153.4 0 224v96c0 53.02 42.98 96 96 96s96-42.98 96-96-43-96-96-96zm256 0c-11.28 0-21.95 2.305-32 5.879V224c0-35.3 28.7-64 64-64 17.67 0 32-14.33 32-32s-14.33-32-32-32c-70.58 0-128 57.42-128 128v96c0 53.02 42.98 96 96 96s96-42.98 96-96-43-96-96-96z"
+                    fill="#473198"
+                    class="fill-000000"
+                    data-darkreader-inline-fill=""
+                    style="--darkreader-inline-fill: #322173;">
+                    </path>
+                </svg>
+
+        </div>
+
+        <p>
+            This generator randomly pulls from a never ending collection of quotes. <br>
+            Use the category list to filter the quotes to your linking.
+        </p>
+    </section>
+
+    <main>
+        <div class="quote__container">
+
+            <div>
+                <p class="quote"  id="quote">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quod labore maiores sint perspiciatis perferendis eos explicabo non, expedita libero!
+                </p>
+            </div>
+
+            <div class="info__container">
+                <hr>
+
+                <div class="quote__info">
+                    <p id="author">- Author</p>
+                    <div class="action">
+                        <button class="action__btn" id="generate">
+                            <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="size-6">
+                                <path
+                                fill-rule="evenodd"
+                                d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z"
+                                clip-rule="evenodd" />
+                            </svg>
+                        </button>
+
+                        <button class="action__btn" id="twitter-link">
+                            <a class="twitter-share-button" target="_blank">
+                                <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                x="0px"
+                                y="0px"
+                                width="50"
+                                height="50"
+                                viewBox="0 0 50 50">
+                                    <path
+                                    d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category__container" id="category-container">
+
+        </div>
+    </main>
+</body>
+</html>
